@@ -319,7 +319,7 @@ io.on('connection', (socket) => {
             // Make sure the global server and its default channels exist (creates them if not)
             const globalServer = await Server.findOneAndUpdate(
                 { code: 'GLOBAL' },
-                { $setOnInsert: { name: 'Nova Global', owner: 'SYSTEM' } },
+                { $setOnInsert: { name: 'Kinda Private Studying', owner: 'SYSTEM' } },
                 { upsert: true, returnDocument: 'after' }
             );
 
@@ -329,11 +329,6 @@ io.on('connection', (socket) => {
                 { upsert: true }
             );
             
-            await Channel.findOneAndUpdate(
-                { serverId: globalServer._id, name: 'operations' },
-                { $setOnInsert: { serverId: globalServer._id, name: 'operations' } },
-                { upsert: true }
-            );
 
             sendContactList(username);
         } catch (error) {

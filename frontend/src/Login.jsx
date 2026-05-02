@@ -2,7 +2,7 @@ import React from 'react';
 import { io } from 'socket.io-client';
 
 // Establish the connection to your local backend on port 3001
-const socket = io('https://kinda-private-studying-v2.onrender.com');
+const socket = io('http://localhost:3000');
 
 function Login({ onLogin }) {
   const [isLogin, setIsLogin] = React.useState(true);

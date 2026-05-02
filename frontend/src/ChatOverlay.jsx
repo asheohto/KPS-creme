@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { io } from 'socket.io-client';
 
 // Connect to the backend server
-const socket = io('https://kinda-private-studying-v2.onrender.com');
+const socket = io('http://localhost:3000');
 
 function ChatOverlay({ currentUser }) {
   const [contactsOpen, setContactsOpen] = useState(false);
